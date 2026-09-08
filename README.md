@@ -27,11 +27,16 @@ A feature-rich, fully-functional e-commerce web application built with React, No
   * Dynamic filtering by Brands & Categories.
   * Dynamic Pagination across Products, Brands, Categories, and Orders.
  
-
-
 * ** Interactive UX/UI:**
   * Live **Toast Notifications** for errors, validation warnings, and success actions.
   * Responsive Design with Skeleton Loader / Loading States.
+ 
+  * * **Advanced Product Search, Filtering & Sorting:**
+  * Real-time search bar functionality to query products by name or keywords.
+  * Dynamic multi-criteria filtering by Specific Brand, Category, or Subcategory.
+  * Price range filtering using custom min/max numerical inputs.
+  * Multi-directional sorting options (Price: Low to High, Price: High to Low, Most Selling, and Newest Arrivals).
+ 
   * 
 * **Admin Dashboard & Role-Based Access Control:**
   * **Product Management:** Full CRUD operations (Add, Edit, Delete, and View all products).
