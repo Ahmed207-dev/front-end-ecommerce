@@ -1,0 +1,43 @@
+{
+  "name": "app-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fortawesome/react-fontawesome": "^3.5.0",
+    "@popperjs/core": "^2.11.8",
+    "@reduxjs/toolkit": "^2.12.0",
+    "axios": "^1.19.0",
+    "bootstrap": "^5.3.8",
+    "multiselect-react-dropdown": "^2.0.25",
+    "react": "^19.2.8",
+    "react-bootstrap": "^2.10.10",
+    "react-color": "^2.19.3",
+    "react-dom": "^19.2.8",
+    "react-dropdown": "^2.0.0",
+    "react-dropzone": "^20.1.0",
+    "react-icons": "^5.7.0",
+    "react-multiple-image-grid": "^1.0.3",
+    "react-paginate": "^8.3.0",
+    "react-rating-stars-component": "^2.2.0",
+    "react-redux": "^9.3.0",
+    "react-router-dom": "^7.18.2",
+    "react-simple-star-rating": "^5.1.7",
+    "react-stars": "^2.2.5",
+    "react-toastify": "^11.1.0",
+    "unop-react-dropdown": "^0.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "oxlint": "^1.75.0",
+    "vite": "^8.2.0"
+  }
+}
