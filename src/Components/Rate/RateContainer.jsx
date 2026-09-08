@@ -3,7 +3,7 @@ import ProudctDetailesHook from "../../CustomHook/proudct/ProudctDetailesHook";
 import rate from "../../Images/star.png";
 import PaginationPage from "../utils/PaginationPage";
 import { Rateitem } from "./Rateitem";
-import { Ratepost } from "./Ratepost";
+import { Ratepost } from "./RatePost";
 import AllReviewhook from "../../CustomHook/review/AllReviewhook";
 
 export const RateContainer = () => {
