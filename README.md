@@ -27,8 +27,16 @@ A feature-rich, fully-functional e-commerce web application built with React, No
   * Dynamic filtering by Brands & Categories.
   * Dynamic Pagination across Products, Brands, Categories, and Orders.
  
-  * to visit : https://front-end-ecommerce-i9zd.vercel.app/
 
-* **🔔 Interactive UX/UI:**
+
+* ** Interactive UX/UI:**
   * Live **Toast Notifications** for errors, validation warnings, and success actions.
   * Responsive Design with Skeleton Loader / Loading States.
+  * 
+* **Admin Dashboard & Role-Based Access Control:**
+  * **Product Management:** Full CRUD operations (Add, Edit, Delete, and View all products).
+  * **Order Management:** Track and update order statuses (e.g., changing status from pending to paid or delivered).
+  * **Catalog Management:** Add and manage Brands, Categories, and Subcategories.
+  * **Coupon Management:** Create, update, and delete discount coupons for promotions.
+ 
+  *   * to visit : https://front-end-ecommerce-i9zd.vercel.app/
