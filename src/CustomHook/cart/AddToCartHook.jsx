@@ -6,14 +6,19 @@ import { addToCart, getAllCart } from "../../ReduxTollKit/Slice/CartSlice";
 const AddToCartHook = (id, oneitem) => {
   const dispatch = useDispatch();
   const { status } = useSelector((state) => state.cart);
-  const [colorIndex, setColorIndex] = useState("");
+  const [colorIndex, setColorIndex] = useState(null);
   const [colorText, setColorText] = useState("");
   const [loading, setLoading] = useState(true);
   const [isPress, setIsPress] = useState(false);
 
   const saveColor = (index, color) => {
-    setColorIndex(index);
-    setColorText(color);
+    if (colorIndex === index) {
+      setColorIndex(null);
+      setColorText("");
+    } else {
+      setColorIndex(index);
+      setColorText(color);
+    }
   };
   const addCart = async () => {
     const token = localStorage.getItem("token");

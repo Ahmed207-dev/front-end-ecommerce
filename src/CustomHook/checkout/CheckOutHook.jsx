@@ -60,8 +60,6 @@ const CheckOutHook = () => {
   useEffect(() => {
     if (loading === false) {
       if (orderRes) {
-        console.log(orderRes);
-
         if (orderRes?.status?.status === 201) {
           toast.success("تم طلب الطلب بنجاح");
           setTimeout(() => {

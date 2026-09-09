@@ -92,7 +92,6 @@ export const orderSlice = createSlice({
     bulider.addCase(AddOrder.fulfilled, (state, action) => {
       state.records = action.payload.data;
       state.status = action.payload;
-      console.log(action.payload);
     });
     bulider.addCase(AddOrder.pending, (state, action) => {
       state.status = action.payload;

@@ -1154,7 +1154,7 @@ body {
     max-width: 100% !important;
     display: flex !important;
     flex-direction: row !important;
-    overflow-x: auto !important; 
+    overflow-x: auto !important;
     white-space: nowrap !important;
   }
 
@@ -1163,5 +1163,53 @@ body {
     background-color: #f8f9fa;
     border: 1px solid #eee;
     height: fit-content !important;
+  }
+}
+
+/* للشاشات الكبيرة */
+.user-sidebar {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-link {
+  display: block;
+  padding: 12px 16px;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-size: 14px;
+  border: 1px solid #eee;
+}
+.user-link:hover {
+  background-color: #333 !important; /* لون خلفية داكن عند التمرير */
+  color: #fff !important; /* لون النص أبيض */
+}
+@media (max-width: 768px) {
+  .user-sidebar {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    scrollbar-width: none;
+  }
+
+  .user-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .user-link {
+    flex: 0 0 auto !important;
+    height: auto !important;
+    padding: 8px 14px !important;
+    background-color: #f8f9fa;
   }
 }
