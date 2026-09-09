@@ -1130,3 +1130,38 @@ body {
   font-weight: bold;
 }
 
+.admin-sidebar {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.admin-link {
+  display: block;
+  padding: 10px 16px;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important; 
+    white-space: nowrap !important;
+  }
+
+  .admin-link {
+    flex: 0 0 auto !important;
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    height: fit-content !important;
+  }
+}

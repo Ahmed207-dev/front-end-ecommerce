@@ -5,7 +5,7 @@ export const AdminSubCategoryPage = () => {
   return (
     <div>
       <div
-        className="container"
+        className="container user-response"
         style={{ display: "flex", minHeight: "670px" }}
       >
         <div style={{ display: "flex", flex: 1 }}>
