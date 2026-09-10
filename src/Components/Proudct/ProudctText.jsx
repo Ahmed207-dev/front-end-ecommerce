@@ -83,6 +83,8 @@ export const ProudctText = () => {
             justifyContent: "center",
             alignItems: "center",
             gap: "5px",
+            width: "140px",
+            height: "45px",
           }}
           onClick={addCart}
           disabled={isPress === true}

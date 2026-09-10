@@ -6,6 +6,7 @@ import SearchHomePageHook from "../proudct/SearchHomePageHook";
 
 const SideBarSearchHook = () => {
   const [, , , , searchApi] = SearchHomePageHook();
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
   const category = useSelector((state) => state.categorey);
@@ -17,7 +18,12 @@ const SideBarSearchHook = () => {
   };
 
   useEffect(() => {
-    getAllData();
+    const getAll = async () => {
+      setLoading(true);
+      await getAllData();
+      setLoading(false);
+    };
+    getAll();
   }, [dispatch]);
 
   const [catChecked, setCatChecked] = useState([]);
@@ -80,6 +86,7 @@ const SideBarSearchHook = () => {
     clickBrand,
     priceFrom,
     priceTo,
+    loading,
   ];
 };
 

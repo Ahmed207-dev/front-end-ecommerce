@@ -7,7 +7,6 @@ const SidebarFilter = () => {
     <div className="mt-3">
       <div className="row">
         <div className="d-flex flex-column mt-2">
-          {/* قسم الفئة */}
           <div className="filter-title">الفئة</div>
           <div className="d-flex mt-3">
             <input type="checkbox" value="0" />
@@ -21,7 +20,7 @@ const SidebarFilter = () => {
           ))}
 
           <div className="filter-title mt-4">الماركة</div>
-          <div className="d-flex mt-1">
+          <div className="d-flex mt-3">
             <input type="checkbox" value="" />
             <div className="filter-sub me-1">الكل</div>
           </div>

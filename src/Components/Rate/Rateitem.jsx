@@ -7,6 +7,7 @@ import EditReviewHook from "../../CustomHook/review/EditReviewHook";
 
 export const Rateitem = ({ item }) => {
   const [show, handleDelete] = DeleteReviewHook(item);
+  if (!item) return null;
   return (
     <>
       <div className="container d-flex align-items-center p-2">

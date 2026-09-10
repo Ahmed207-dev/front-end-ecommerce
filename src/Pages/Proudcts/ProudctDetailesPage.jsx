@@ -5,7 +5,7 @@ import { RateContainer } from "../../Components/Rate/RateContainer";
 import ViewHomePageHook from "../../CustomHook/proudct/ViewHomePageHook";
 
 export const ProudctDetailesPage = () => {
-  const [items] = ViewHomePageHook();
+  const [items, loading] = ViewHomePageHook();
 
   return (
     <div style={{ minHeight: "670px" }}>

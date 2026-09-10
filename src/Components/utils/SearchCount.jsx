@@ -20,8 +20,8 @@ export const SearchCount = ({ title, searchApi }) => {
           trigger={
             <CustomTrigger className="mx-1">
               <img
-                width="20px"
-                height="20px"
+                width="40px"
+                height="30px"
                 className="ms-1"
                 src={drop}
                 alt=""

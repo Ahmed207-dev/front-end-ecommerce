@@ -12,7 +12,7 @@ export const CartCheckOut = ({ total }) => {
     if (total?._id) {
       navigate("/cart/pay");
     } else {
-      toast.warning("اضف منتجات ");
+      toast.warning("اضف منتجات");
     }
   };
   return (
@@ -46,11 +46,21 @@ export const CartCheckOut = ({ total }) => {
           >
             اتمام الشراء
           </button>
+          <button
+            style={{
+              width: "100%",
+              padding: "4px",
+              borderRadius: "10px",
+              backgroundColor: "red",
+              border: "none",
+            }}
+            onClick={handleDelete}
+          >
+            حذف الكل
+          </button>
         </div>
       </div>
-      <button onClick={handleDelete} className="btn btn-danger p-1 mx-2 ">
-        حذف الكل
-      </button>
+
       <ToastContainer />
     </>
   );

@@ -8,13 +8,15 @@ import ViewHomePageHook from "../../CustomHook/proudct/ViewHomePageHook";
 import { ToastContainer } from "react-toastify";
 
 export const HomePage = () => {
-  const [items, status] = ViewHomePageHook();
+  const [items, status, loading] = ViewHomePageHook();
+
   return (
     <>
       <Slider />
       <HomeCatogery />
       <ProudctsCopmonent
         proudcts={items}
+        loading={loading}
         status={status}
         title="اكثر مبيعا"
         btntitle="المزيد"
@@ -23,6 +25,7 @@ export const HomePage = () => {
       <Discount />
       <ProudctsCopmonent
         proudcts={items}
+        loading={loading}
         status={status}
         title=" احدث مشتريات"
         btntitle="المزيد"

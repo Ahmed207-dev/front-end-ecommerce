@@ -3,14 +3,18 @@ import GetAllCartHook from "../../CustomHook/cart/GetAllCartHook";
 import { CartCheckOut } from "./CartCheckOut";
 import { CartItem } from "./CartItem";
 import market from "../../Images/markting.png";
+import LoadingPage from "../../CustomHook/Loading/LoadingPage";
 export const CartContainer = () => {
-  const [data, status] = GetAllCartHook();
+  const [data, status, loading] = GetAllCartHook();
   const navigate = useNavigate(); //
+
   //
   return (
     <div className="container container-cart">
       <div style={{ display: "flex", flexDirection: "column", flex: 2 }}>
-        {data?.cartItems?.length >= 1 ? (
+        {loading ? (
+          <LoadingPage />
+        ) : data?.cartItems?.length >= 1 ? (
           data?.cartItems?.map((item, index) => (
             <CartItem key={index} item={item} />
           ))

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { updateQunatity } from "../../ReduxTollKit/Slice/CartSlice";
+import { getAllCart, updateQunatity } from "../../ReduxTollKit/Slice/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-//
+
 const updateCartHook = (item) => {
   const { records, status } = useSelector((state) => state.cart);
   const [qty, setQty] = useState(item?.quantity || 0);
@@ -15,18 +15,19 @@ const updateCartHook = (item) => {
   let id = item?._id;
   let data = { quantity: Number(qty) };
   const onSubmit = async () => {
+    if (Number(qty) === Number(item?.quantity)) {
+      toast.warning("حدث القيمه اولا");
+      return;
+    }
     setLoading(true);
-    await dispatch(updateQunatity({ id, data }));
-
+    await dispatch(updateQunatity({ id, data })).unwrap();
+    await dispatch(getAllCart());
     setLoading(false);
   };
   useEffect(() => {
     if (loading === false) {
       if (status?.status === 200) {
         toast.success("تم التعديل بنجاح");
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1500);
       }
     }
   }, [loading]);

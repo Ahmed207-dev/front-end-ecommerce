@@ -8,7 +8,7 @@ import AllReviewhook from "../../CustomHook/review/AllReviewhook";
 
 export const RateContainer = () => {
   const { id } = useParams();
-  const [res] = AllReviewhook(id);
+  const [res, , loading] = AllReviewhook(id);
 
   return (
     <div className="container rate-container" style={{ margin: "20px 0" }}>
@@ -27,7 +27,13 @@ export const RateContainer = () => {
         </div>
       </div>
       <Ratepost />
-      {res ? res?.map((item, i) => <Rateitem key={i} item={item} />) : null}
+      {loading ? (
+        <h6>جاري التحميل...</h6> // أو الـ Loading Component بتاعك
+      ) : res?.length > 0 ? (
+        res.map((item, index) => <Rateitem key={index} item={item} />)
+      ) : (
+        <h6>لا توجد تقييمات</h6>
+      )}
 
       <PaginationPage />
     </div>

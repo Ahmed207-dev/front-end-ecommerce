@@ -4,11 +4,12 @@ import PaginationPage from "../../Components/utils/PaginationPage";
 import { SearchCount } from "../../Components/utils/SearchCount";
 import SidebarFilter from "../../Components/utils/SideFilter";
 import SearchHomePageHook from "../../CustomHook/proudct/SearchHomePageHook";
+import SideBarSearchHook from "../../CustomHook/search/SideBarSearchHook";
 
 export const ShopProudctsPage = () => {
   const [records, Pagination, pageCount, getpage, searchApi] =
     SearchHomePageHook();
-
+  const [, , , , , , loading] = SideBarSearchHook();
 
   return (
     <div style={{ minHeight: "670px" }}>
@@ -25,6 +26,7 @@ export const ShopProudctsPage = () => {
           <div className="col-10 col-sm-10 col-md-11">
             <ProudctsCopmonent
               proudcts={records}
+              loading={loading}
               title=""
               btntitle=""
               pathtext=""

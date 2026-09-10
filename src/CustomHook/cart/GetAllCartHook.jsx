@@ -1,10 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCart } from "../../ReduxTollKit/Slice/CartSlice";
 const GetAllCartHook = () => {
   const dispatch = useDispatch();
-  const { status, data } = useSelector((state) => state.cart);
-
+  const { status, data, loading } = useSelector((state) => state.cart);
   useEffect(() => {
     const token = localStorage.getItem("token");
     const get = async () => {
@@ -15,7 +14,7 @@ const GetAllCartHook = () => {
     get();
   }, [dispatch]);
 
-  return [data, status];
+  return [data, status, loading];
 };
 
 export default GetAllCartHook;

@@ -82,6 +82,7 @@ export const cartSlice = createSlice({
     records: [],
     status: [],
     data: [],
+    loading: true,
   },
   name: "cartSlice",
   reducers: {},
@@ -98,9 +99,14 @@ export const cartSlice = createSlice({
     bulider.addCase(getAllCart.fulfilled, (state, action) => {
       state.data = action.payload.data;
       state.status = action.payload;
+      state.loading = false;
+    });
+    bulider.addCase(getAllCart.pending, (state, action) => {
+      state.loading = true;
     });
     bulider.addCase(getAllCart.rejected, (state, action) => {
       state.status = action.payload;
+      state.loading = false;
     });
     // deleteAllCart
     bulider.addCase(deleteAllCart.fulfilled, (state, action) => {
@@ -124,10 +130,15 @@ export const cartSlice = createSlice({
     bulider.addCase(updateQunatity.fulfilled, (state, action) => {
       state.data = action.payload.data;
       state.status = action.payload;
+      state.loading = false;
+    });
+    bulider.addCase(updateQunatity.pending, (state, action) => {
+      state.loading = true;
     });
     bulider.addCase(updateQunatity.rejected, (state, action) => {
       state.status = action.payload;
       state.error = action.payload;
+      state.loading = false;
     });
     // applayCoupon
     bulider.addCase(applayCoupon.fulfilled, (state, action) => {

@@ -41,6 +41,9 @@ import { AdminEditCouponPage } from "./Pages/Admin/AdminEditCouponPage";
 import ProtectedRoute from "./Components/utils/protectedroute";
 import { ProudctsByCatgorey } from "./Pages/Proudcts/ProudctsByCatgorey";
 import { ProudctsByBrand } from "./Pages/Proudcts/ProudctsByBrand";
+import TermsPage from "./Pages/util/TermsPage";
+import PrivacyPolicyPage from "./Pages/util/PrivacyPolicyPage";
+import ContactPage from "./Pages/util/ContactPage";
 //
 const router = createBrowserRouter([
   {
@@ -99,6 +102,18 @@ const router = createBrowserRouter([
       {
         path: "/allbrand/:id",
         element: <ProudctsByBrand />,
+      },
+      {
+        path: "/terms",
+        element: <TermsPage />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicyPage />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
       },
 
       {

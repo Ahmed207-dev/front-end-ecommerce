@@ -3,7 +3,10 @@ import { ProudctText } from "./ProudctText";
 
 export const ProudctDetailes = () => {
   return (
-    <div className="container" style={{ display: "flex", flexWrap: "wrap" }}>
+    <div
+      className="container"
+      style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}
+    >
       <div style={{ flex: 1 }}>
         <ProudctGallery />
       </div>

@@ -8,14 +8,14 @@ const AllReviewhook = (id) => {
   const res = useSelector((state) => state.review);
 
   const [loading, setLoading] = useState(true);
-  // AllReview
+
   useEffect(() => {
     setLoading(true);
     dispatch(AllReview(id));
     setLoading(false);
   }, [dispatch]);
 
-  return [res.records];
+  return [res.records, AllReview, loading];
 };
 
 export default AllReviewhook;

@@ -94,9 +94,9 @@ export const NavBarLogin = () => {
             ) : (
               <Nav.Link
                 href="/login"
-                className="nav-text d-flex mt-3 justify-content-center"
+                className="nav-text d-flex mt-3 justify-content-center gap-1"
               >
-                <CgProfile />
+                <CgProfile size={15} />
                 <p style={{ color: "white" }}>دخول</p>
               </Nav.Link>
             )}
@@ -105,8 +105,8 @@ export const NavBarLogin = () => {
               className="nav-text d-flex mt-3 justify-content-center cart"
               style={{ color: "white" }}
             >
-              <span className="cart-logo">
-                <FaShoppingCart />
+              <span style={{ marginLeft: "4px" }} className="cart-logo">
+                <FaShoppingCart size={15} />
                 <span className="cart-num">{status?.numOfCartItems || 0}</span>
               </span>
               <p style={{ color: "white" }}>العربه</p>
