@@ -13,6 +13,10 @@ export const ApplayCouponHook = () => {
   };
   const onSetName = async () => {
     setLoading(true);
+    if (coupounName === "") {
+      toast.warning("من فضلك اكتب اسم الكوبون");
+      return;
+    }
     await dispatch(applayCoupon({ couponName: coupounName }));
     setLoading(false);
   };
@@ -20,14 +24,8 @@ export const ApplayCouponHook = () => {
     if (loading === false) {
       if (status?.status === 200) {
         toast.success("تم تفعيل الكوبون بنجاح");
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1500);
       } else {
         toast.error("الكوبون خطا او انتهي");
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1500);
       }
     }
   }, [loading]);
