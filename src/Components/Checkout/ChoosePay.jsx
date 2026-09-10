@@ -22,7 +22,7 @@ export const ChoosePay = () => {
   };
 
   const [cartItems] = GetAllCartHook();
-
+  //
   return (
     <>
       <div>
@@ -67,8 +67,20 @@ export const ChoosePay = () => {
           </div>
         </div>
       </div>
+      {/*  السعر قبل الخصم */}
       <div className="inp-choose-pay">
-        <div className="value-choose">{cartItems?.totalCartPrice} جنيه</div>
+        <div className="value-choose">
+          {cartItems?.totalPriceAfterDiscount ? (
+            <div style={{ display: "flex", gap: "5px" }}>
+              <span style={{ textDecoration: "line-through" }}>
+                {cartItems?.totalCartPrice}
+              </span>
+              <span>السعر بعد الخصم{cartItems?.totalPriceAfterDiscount} </span>
+            </div>
+          ) : (
+            cartItems?.totalCartPrice
+          )}
+        </div>
         <button onClick={changeMethod}>اتمام الشراء</button>
       </div>
       <ToastContainer />
