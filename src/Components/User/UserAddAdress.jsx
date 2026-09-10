@@ -23,7 +23,7 @@ export const UserAddAdress = () => {
         ></div>
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="form-admin"
+          className="form-admin w-100"
           action=""
         >
           <input

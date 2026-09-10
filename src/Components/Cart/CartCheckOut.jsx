@@ -2,11 +2,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import DeleteAllCartHook from "../../CustomHook/cart/DeleteAllCartHook";
 import { ApplayCouponHook } from "../../CustomHook/cart/ApplayCouponHook";
+import LoadingPage from "../../CustomHook/Loading/LoadingPage";
 
 export const CartCheckOut = ({ total }) => {
   const navigate = useNavigate();
   const [handleDelete] = DeleteAllCartHook();
-  const [coupounName, onChangecoupounName, onSetName] = ApplayCouponHook();
+  const [coupounName, onChangecoupounName, onSetName, loading] =
+    ApplayCouponHook();
 
   const handleCheck = () => {
     if (total?._id) {
@@ -30,7 +32,9 @@ export const CartCheckOut = ({ total }) => {
           <button onClick={onSetName}>تطبيق </button>
         </div>
         <div className="value-cart">
-          {total?.totalPriceAfterDiscount ? (
+          {loading ? (
+            <LoadingPage />
+          ) : total?.totalPriceAfterDiscount ? (
             <div style={{ display: "flex", gap: "5px" }}>
               <span style={{ textDecoration: "line-through" }}>
                 {total?.totalCartPrice} السعر قبل الخصم

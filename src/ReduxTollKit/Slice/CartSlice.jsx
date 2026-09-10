@@ -144,10 +144,15 @@ export const cartSlice = createSlice({
     bulider.addCase(applayCoupon.fulfilled, (state, action) => {
       state.data = action.payload.data;
       state.status = action.payload;
+      state.loading = false;
+    });
+    bulider.addCase(applayCoupon.pending, (state, action) => {
+      state.loading = true;
     });
     bulider.addCase(applayCoupon.rejected, (state, action) => {
       state.status = action.payload;
       state.error = action.payload;
+      state.loading = false;
     });
   },
 });
