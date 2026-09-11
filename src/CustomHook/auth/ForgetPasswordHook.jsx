@@ -38,7 +38,7 @@ const ForgetPasswordHook = () => {
       }
     }
   }, [loading]);
-  return [email, changeEmail, onSubmit];
+  return [email, changeEmail, onSubmit, loading];
 };
 
 export default ForgetPasswordHook;
