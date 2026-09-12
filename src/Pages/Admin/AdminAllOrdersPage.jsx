@@ -5,7 +5,7 @@ import PaginationPage from "../../Components/utils/PaginationPage";
 export const AmidnAllOrders = () => {
   return (
     <>
-      <div className="container  d-lg-flex py-2">
+      <div className="container d-lg-flex py-2">
         <div style={{ display: "flex", flex: 1 }}>
           <AdminSideBar />
         </div>
