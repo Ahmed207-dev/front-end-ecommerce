@@ -5,12 +5,14 @@ import GetAllCartHook from "../../CustomHook/cart/GetAllCartHook";
 import CardCheckOutHook from "../../CustomHook/checkout/CardCheckOutHook";
 
 export const ChoosePay = () => {
-  const [data, SaveOption, handlePayCash] = CheckOutHook();
+  const [data, SaveOption, handlePayCash, selectOption] = CheckOutHook();
   const [show, setShow] = useState("");
   const [handlePayCard] = CardCheckOutHook();
+
   const handleClick = (e) => {
     setShow(e.target.value);
   };
+
   const changeMethod = () => {
     if (show === "cash") {
       handlePayCash();
@@ -49,25 +51,24 @@ export const ChoosePay = () => {
             <label htmlFor="pay-cash">الدفع عند الاستلام</label>
           </div>
           <div className="drop-down">
-            {show === "cash" && (
-              <select
-                name="category"
-                id="cat"
-                style={{ width: "50%", padding: "5px" }}
-                onChange={SaveOption}
-              >
-                <option value="0">اختر العنوان</option>
-                {data?.map((item, i) => (
-                  <option key={i} value={item._id}>
-                    {item.alias}
-                  </option>
-                ))}
-              </select>
-            )}
+            <select
+              value={selectOption}
+              name="category"
+              id="cat"
+              style={{ width: "50%", padding: "5px" }}
+              onChange={SaveOption}
+            >
+              <option value="0">اختر العنوان</option>
+              {data?.map((item, i) => (
+                <option key={i} value={item._id}>
+                  {item.alias}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
       </div>
-      {/*  السعر قبل الخصم */}
+
       <div className="inp-choose-pay">
         <div className="value-choose">
           {cartItems?.totalPriceAfterDiscount ? (
