@@ -4,7 +4,7 @@ import { AdminEditCoupon } from "../../Components/Admin/AdminEditCoupon";
 export const AdminEditCouponPage = () => {
   return (
     <>
-      <div className="container d-flex py-2 flex-wrap">
+      <div className="container  d-lg-flex py-2">
         <div style={{ display: "flex", flex: 1 }}>
           <AdminSideBar />
         </div>

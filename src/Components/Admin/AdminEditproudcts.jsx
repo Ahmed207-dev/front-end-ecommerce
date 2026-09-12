@@ -96,7 +96,6 @@ export const AdminEditproudcts = () => {
                   borderRadius: "8px",
                   border: "1px solid #ddd",
                 }}
-                // onLoad={() => URL.revokeObjectURL(file.preview)}
               />
               <button
                 type="button"
@@ -111,7 +110,7 @@ export const AdminEditproudcts = () => {
             </div>
           ))}
         </div>
-        <form className="form-admin" action="">
+        <form className="form-admin w-100" action="">
           <input
             type="text"
             placeholder="اسم المنتج"

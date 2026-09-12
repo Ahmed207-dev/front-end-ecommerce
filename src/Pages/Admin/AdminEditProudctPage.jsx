@@ -3,7 +3,10 @@ import { AdminEditproudcts } from "../../Components/Admin/AdminEditproudcts";
 import { AdminSideBar } from "../../Components/Admin/AdminSideBar";
 export const AdminEditProudctPage = () => {
   return (
-    <div className="container" style={{ display: "flex", minHeight: "670px" }}>
+    <div
+      className="container user-response"
+      style={{ display: "flex", minHeight: "670px" }}
+    >
       <div style={{ display: "flex", flex: 1 }}>
         <AdminSideBar />
       </div>
