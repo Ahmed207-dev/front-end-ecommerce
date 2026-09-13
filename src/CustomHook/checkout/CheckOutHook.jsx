@@ -18,7 +18,7 @@ const CheckOutHook = () => {
   const [selectOption, setSelectOption] = useState("0");
 
   const cartId = cartItems?._id || "";
-  const [data] = AllAddressHook();
+  const [data, , getAllAdress] = AllAddressHook();
   const navigte = useNavigate();
 
   const SaveOption = async (e) => {
@@ -80,7 +80,15 @@ const CheckOutHook = () => {
     }
   }, [loadingOrder, orderRes]);
 
-  return [data, SaveOption, handlePayCash, selectOption];
+  return [
+    data,
+    SaveOption,
+    handlePayCash,
+    selectOption,
+    cartId,
+    address,
+    getAllAdress,
+  ];
 };
 
 export default CheckOutHook;

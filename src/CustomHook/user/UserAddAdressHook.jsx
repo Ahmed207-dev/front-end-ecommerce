@@ -46,9 +46,6 @@ const UserAddAdressHook = () => {
       if (records) {
         if (records?.status === "success") {
           toast.success("تمت الاضافه بنجاح");
-          setTimeout(() => {
-            navigte("/user/adress");
-          }, 1500);
         } else {
           toast.error("حدث خطا");
         }

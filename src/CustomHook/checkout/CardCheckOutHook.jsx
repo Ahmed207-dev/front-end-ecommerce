@@ -5,7 +5,7 @@ import CheckOutHook from "./CheckOutHook";
 
 //
 const CardCheckOutHook = () => {
-  const [, , , cartId, address] = CheckOutHook();
+  const [, , , , cartId, address] = CheckOutHook();
   const dispatch = useDispatch();
   const info = useSelector((state) => state.order);
   const [loading, setLoading] = useState(true);
@@ -29,6 +29,7 @@ const CardCheckOutHook = () => {
       }
     }
   }, [loading, info]);
+
   return [handlePayCard];
 };
 

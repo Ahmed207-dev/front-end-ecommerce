@@ -19,7 +19,8 @@ const AllAddressHook = () => {
       toast.success("تم الحذف");
     }
   };
-  return [data, onClickDelete];
+
+  return [data, onClickDelete, getAllAdress];
 };
 
 export default AllAddressHook;

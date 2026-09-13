@@ -1230,3 +1230,94 @@ body {
     height: 280px;
   }
 }
+
+.inp-pay {
+  width: fit-content;
+  background-color: #fafafa;
+  box-shadow: 0 0 2px #000;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.inp-pay-active {
+  border: 2px solid #2b6cb0;
+}
+.pay-page-container {
+  direction: rtl;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.order-summary-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  width: 320px;
+  min-width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+}
+
+.summary-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #111111;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  color: #666666;
+  font-size: 14px;
+}
+
+.summary-value {
+  font-weight: 600;
+  color: #333333;
+}
+
+.summary-divider {
+  border: none;
+  border-top: 1px solid #eeeeee;
+  margin: 16px 0;
+}
+
+.total-price-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.total-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 6px;
+}
+
+.total-amount {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111111;
+}
+
+.checkout-btn {
+  width: 100%;
+  background-color: #1f2937;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #111827;
+}
