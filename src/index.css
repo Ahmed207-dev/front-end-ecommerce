@@ -1321,3 +1321,11 @@ body {
 .checkout-btn:hover {
   background-color: #111827;
 }
+.login-page {
+  background-color: #fafafa;
+  box-shadow: 0 0 6px #000;
+  width: fit-content;
+  margin: 20px auto;
+  padding: 20px 10px;
+  border-radius: 10px;
+}
