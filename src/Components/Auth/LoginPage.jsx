@@ -1,9 +1,9 @@
-import { FaEyeSlash } from "react-icons/fa";
+import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import LogInHook from "../../CustomHook/auth/LogInHook";
 import { ToastContainer } from "react-toastify";
 import Spinner from "react-bootstrap/Spinner";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 export const LoginPage = () => {
   const [
     email,
@@ -14,15 +14,12 @@ export const LoginPage = () => {
     loading,
     isPress,
   ] = LogInHook();
-  const inp = useRef();
 
-  const changeType = () => {
-    if (inp.current.type === "password") {
-      inp.current.type = "text";
-    } else if (inp.current.type === "text") {
-      inp.current.type = "password";
-    }
+  const [showPass, setShowPass] = useState(false);
+  const togglePassword = () => {
+    setShowPass(!showPass);
   };
+
   return (
     <div className="container" style={{ minHeight: "670px" }}>
       <div className="login-page">
@@ -41,19 +38,20 @@ export const LoginPage = () => {
           </div>
           <div className="mb-3 position-relative">
             <input
-              ref={inp}
               value={password}
               onChange={changePassword}
-              type="password"
+              type={showPass ? "text" : "password"}
               className="form-control pe-5"
               id="exampleInputPassword1"
               placeholder="كلمه السر..."
             />
-            <FaEyeSlash
-              className="position-absolute top-50 translate-middle-y start-0 text-secondary ms-2"
+            <span
+              onClick={togglePassword}
+              className="position-absolute top-50 translate-middle-y start-0 ms-2 text-secondary"
               style={{ cursor: "pointer" }}
-              onClick={changeType}
-            />
+            >
+              {showPass ? <FaEye /> : <FaEyeSlash />}
+            </span>
           </div>
 
           <button
