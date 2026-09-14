@@ -17,7 +17,7 @@ export const ProdctsCard = ({ items, favProd }) => {
             style={{ textDecoration: "none" }}
           >
             <img
-              src={items?.images}
+              src={items?.imageCover}
               className="card-img-top "
               style={{ objectFit: "cover", width: "150px", height: "150px" }}
               alt="product"
