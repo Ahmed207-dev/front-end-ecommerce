@@ -12,7 +12,7 @@ export const CartItem = ({ item }) => {
         className="card border-0 shadow-sm rounded-4 p-3 mb-2"
         style={{ backgroundColor: "#fff" }}
       >
-        <div className="d-flex justify-content-between align-items-stretch">
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-stretch gap-3">
           <div className="d-flex gap-3 align-items-start">
             <img
               src={item?.product?.imageCover}
@@ -69,7 +69,7 @@ export const CartItem = ({ item }) => {
             </div>
           </div>
 
-          <div className="d-flex flex-column justify-content-between align-items-end">
+          <div className="d-flex flex-row flex-md-column justify-content-between align-items-end pt-2 pt-md-0">
             <button className="btn btn-link text-secondary p-0 text-decoration-none d-flex align-items-center gap-1">
               <span
                 onClick={() => {
