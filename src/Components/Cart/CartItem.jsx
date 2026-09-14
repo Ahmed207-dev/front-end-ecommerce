@@ -9,13 +9,13 @@ export const CartItem = ({ item }) => {
   return (
     <>
       <div
-        className="card border-0 shadow-sm rounded-4 p-3 mb-3"
+        className="card border-0 shadow-sm rounded-4 p-3 mb-2"
         style={{ backgroundColor: "#fff" }}
       >
         <div className="d-flex justify-content-between align-items-stretch">
           <div className="d-flex gap-3 align-items-start">
             <img
-              src={item?.product?.imageCover} //
+              src={item?.product?.imageCover}
               alt="mobile"
               style={{ width: "90px", height: "130px", objectFit: "contain" }}
             />
@@ -40,7 +40,7 @@ export const CartItem = ({ item }) => {
               </span>
 
               <div
-                className="rounded-circle mb-3"
+                className="rounded-circle mb-2"
                 style={{
                   width: "20px",
                   height: "20px",
@@ -71,7 +71,6 @@ export const CartItem = ({ item }) => {
 
           <div className="d-flex flex-column justify-content-between align-items-end">
             <button className="btn btn-link text-secondary p-0 text-decoration-none d-flex align-items-center gap-1">
-              <i className="bi bi-trash fs-6"></i>
               <span
                 onClick={() => {
                   deleteItem(item?._id);
@@ -81,7 +80,6 @@ export const CartItem = ({ item }) => {
                 ازاله
               </span>
             </button>
-
             <div className="d-flex align-items-baseline gap-1">
               <span className="fw-bold fs-5 text-dark">{item?.price}</span>
               <span className="text-secondary small">جنية</span>

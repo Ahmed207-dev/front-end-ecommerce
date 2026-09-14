@@ -92,7 +92,7 @@ export const ChoosePay = () => {
                   value={selectOption}
                   name="category"
                   id="cat"
-                  style={{ width: "400px", padding: "8px", margin: "2px" }}
+                  style={{ width: "300px", padding: "8px", margin: "2px" }}
                   onChange={SaveOption}
                 >
                   <option value="0">اختر العنوان</option>
