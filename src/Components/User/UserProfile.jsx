@@ -112,7 +112,7 @@ export const UserProfile = () => {
             value={confirmPassword}
             onChange={changConfimPass}
             type="password"
-            placeholder="تاكيد كلمه المرور القديمه"
+            placeholder="تاكيد كلمه المرور الجديده"
           />
 
           <div className="d-flex ">

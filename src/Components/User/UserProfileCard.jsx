@@ -2,7 +2,6 @@ import { FaEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import UserProfileHook from "../../CustomHook/user/UserProfileHook";
 import { ToastContainer } from "react-toastify";
-import { FaEyeSlash, FaEye } from "react-icons/fa";
 
 export const UserProfileCard = () => {
   const [
@@ -21,7 +20,7 @@ export const UserProfileCard = () => {
   return (
     <>
       <div>
-        <div className="bg-white rounded-4 shadow-sm  mb-2 p-3">
+        <div className="bg-white rounded-4 shadow-sm  mb-4 p-3">
           <div
             style={{
               display: "flex",
@@ -34,18 +33,16 @@ export const UserProfileCard = () => {
               <span style={{ color: "gray" }}> {user?.name}</span>
             </span>
 
-            <div onClick={() => setShow(!show)}>
+            <div
+              style={{ display: "flex", gap: "5px", alignItems: "center" }}
+              onClick={() => setShow(!show)}
+            >
               <Link
                 to=""
-                style={{
-                  display: "flex",
-                  gap: "5px",
-                  alignItems: "center",
-                  textDecoration: "none",
-                  color: "black",
-                }}
+                style={{ color: "black", textDecoration: "none" }}
+                className="d-flex gap-2"
               >
-                <FaEdit style={{ color: "black" }} />
+                <FaEdit />
                 <span>تعديل</span>
               </Link>
             </div>
@@ -83,9 +80,8 @@ export const UserProfileCard = () => {
               <div>
                 <h3>تعديل الصفحه الشخصيه</h3>
               </div>
-              <div className="user-modal">
-                <input value={name} onChange={changName} type="text" />{" "}
-                {showPass ? <FaEye /> : <FaEyeSlash />}
+              <div className="user-modal w-100">
+                <input value={name} onChange={changName} type="text" />
                 <input type="number" value={phone} onChange={changePhone} />
                 <input type="email" value={email} onChange={changeEmail} />
               </div>
