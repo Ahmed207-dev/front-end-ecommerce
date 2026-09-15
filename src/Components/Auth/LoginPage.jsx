@@ -4,6 +4,7 @@ import LogInHook from "../../CustomHook/auth/LogInHook";
 import { ToastContainer } from "react-toastify";
 import Spinner from "react-bootstrap/Spinner";
 import { useRef, useState } from "react";
+import LoadingPage from "../../CustomHook/Loading/LoadingPage";
 export const LoginPage = () => {
   const [
     email,
@@ -58,21 +59,19 @@ export const LoginPage = () => {
             disabled={loading === true && isPress === true}
             onClick={onSubmit}
             type="submit"
-            className="btn btn-primary"
+            className="btn btn-dark text-white p-2 product-cart-add"
             style={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
               gap: "5px",
+              width: "100%",
+              height: "45px",
             }}
           >
-            تسجيل الدخول
+            {loading && isPress ? null : <span> تسجيل الدخول</span>}
             {loading === true && isPress === true ? (
-              <Spinner
-                animation="border"
-                variant="light"
-                role="status"
-              ></Spinner>
+              <LoadingPage className="laoding-page" />
             ) : null}
           </button>
           <p>

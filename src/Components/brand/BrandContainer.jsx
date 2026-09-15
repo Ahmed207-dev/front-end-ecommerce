@@ -16,7 +16,7 @@ export const BrandContainer = () => {
 
   return (
     <div className="container">
-      <div className="admin-content-text my-2">اشهر الماركات</div>
+      <div className="admin-content-text my-3 fs-3 ">اشهر الماركات</div>
       <div className="row d-flex my-2 justify-content-between">
         {loading ? (
           <Spinner animation="border" role="status" variant="primary" />

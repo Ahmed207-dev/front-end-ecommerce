@@ -5,7 +5,7 @@ export const BrandCard = ({ item }) => {
     <>
       <div className=" col-6 col-sm-4 col-md-2 my-2 d-flex justify-content-center">
         <div
-          className="card border-0 shadow-sm rounded-4 p-2 w-100 d-flex justify-content-center align-items-center"
+          className="card border-0 shadow-sm rounded-4 p-2  d-flex justify-content-center align-items-center"
           style={{ height: "100px", backgroundColor: "#F8F9FA" }}
         >
           <Link to={`/allbrand/${item?._id}`}>

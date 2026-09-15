@@ -8,7 +8,7 @@ export const UserAllOrder = () => {
   return (
     <>
       <div>
-        <div className="admin-content-text pb-2">عدد الطلبات #{result}</div>
+        <div className="admin-content-text p-3">عدد الطلبات #{result}</div>
         <div className="justify-content-center">
           {allData?.length > 0 ? (
             allData?.map((items, index) => (
@@ -17,12 +17,14 @@ export const UserAllOrder = () => {
           ) : (
             <h2>لا يوجد طلبات....</h2>
           )}
-          <PaginationPage
-            pageCount={
-              pagination?.numberOfPages ? pagination?.numberOfPages : 0
-            }
-            onpress={onpress}
-          />
+          {allData?.length > 0 ? (
+            <PaginationPage
+              pageCount={
+                pagination?.numberOfPages ? pagination?.numberOfPages : 0
+              }
+              onpress={onpress}
+            />
+          ) : null}
         </div>
       </div>
     </>

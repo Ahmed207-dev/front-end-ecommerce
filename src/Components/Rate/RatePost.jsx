@@ -16,7 +16,7 @@ export const Ratepost = () => {
         <Rating
           value={rate}
           onClick={handleRating}
-          initialValue={3.5}
+          initialValue={1}
           allowFraction
           size={30}
           fillColor="#ffc107"
@@ -28,12 +28,17 @@ export const Ratepost = () => {
           <textarea
             value={comment}
             onChange={changeComment}
-            className="form-rate"
+            className="form-rate mb-3"
             name=""
             id=""
             placeholder="اضف تعليق..."
           ></textarea>
-          <button onClick={onSubmit} type="button" className="btn btn-primary">
+          <button
+            onClick={onSubmit}
+            type="button"
+            className="btn bg-dark text-white"
+            style={{ textAlign: "center" }}
+          >
             اضف تعليق
           </button>
         </form>

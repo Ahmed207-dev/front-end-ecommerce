@@ -3,20 +3,23 @@ import { useEffect } from "react";
 import { FetchProudctByBrand } from "../../ReduxTollKit/Slice/ProudctSlice";
 
 const ViewAllProudctByBrandHook = (brandId) => {
-  let limit = 1;
+  let limit = 2;
   const dispatch = useDispatch();
   const getData = async () => {
     await dispatch(
       FetchProudctByBrand({
-        limit,
+        limit: limit,
         page: "",
         id: brandId,
       }),
     );
   };
   useEffect(() => {
-    getData();
-  }, []);
+    if (brandId) {
+      getData();
+    }
+  }, [brandId]);
+
   const brands = useSelector((state) => state.proudct);
   let pageCount = brands?.Pagination?.paginationResult?.numberOfPages || 0;
   let getpage = async (page) => {
@@ -28,6 +31,7 @@ const ViewAllProudctByBrandHook = (brandId) => {
       }),
     );
   };
+
   return [brands, pageCount, getpage];
 };
 

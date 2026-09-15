@@ -28,7 +28,7 @@ export const RateContainer = () => {
       </div>
       <Ratepost />
       {loading ? (
-        <h6>جاري التحميل...</h6> // أو الـ Loading Component بتاعك
+        <h6>جاري التحميل...</h6> 
       ) : res?.length > 0 ? (
         res.map((item, index) => <Rateitem key={index} item={item} />)
       ) : (

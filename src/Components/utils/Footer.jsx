@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className="footer-section bg-white py-3 border-top">
+    <footer
+      className="footer-section bg-white py-3 border-top"
+      style={{ minHeight: "70px", display: "flex", alignItems: "center" }}
+    >
       <div className="container-fluid px-4">
         <div className="row align-items-center justify-content-between gy-2">
           <div className="col-12 col-md-6 d-flex align-items-center gap-3 justify-content-center justify-content-md-start">

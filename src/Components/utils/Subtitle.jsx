@@ -4,7 +4,7 @@ export const Subtitle = ({ title, btntitle, pathtext }) => {
   return (
     <>
       <div className="d-flex justify-content-between pt-4">
-        <div className="sub-tile">{title}</div>
+        <div className="sub-tile fs-3">{title}</div>
         <Link to={pathtext} style={{ textDecoration: "none" }}>
           {btntitle ? <div className="shopping-now ">{btntitle}</div> : null}
         </Link>

@@ -2,6 +2,7 @@ import { FaEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import UserProfileHook from "../../CustomHook/user/UserProfileHook";
 import { ToastContainer } from "react-toastify";
+import { FaEyeSlash, FaEye } from "react-icons/fa";
 
 export const UserProfileCard = () => {
   const [
@@ -20,7 +21,7 @@ export const UserProfileCard = () => {
   return (
     <>
       <div>
-        <div className="bg-white rounded-4 shadow-sm  mb-4">
+        <div className="bg-white rounded-4 shadow-sm  mb-2 p-3">
           <div
             style={{
               display: "flex",
@@ -33,14 +34,20 @@ export const UserProfileCard = () => {
               <span style={{ color: "gray" }}> {user?.name}</span>
             </span>
 
-            <div
-              style={{ display: "flex", gap: "5px", alignItems: "center" }}
-              onClick={() => setShow(!show)}
-            >
-              <Link to="">
+            <div onClick={() => setShow(!show)}>
+              <Link
+                to=""
+                style={{
+                  display: "flex",
+                  gap: "5px",
+                  alignItems: "center",
+                  textDecoration: "none",
+                  color: "black",
+                }}
+              >
                 <FaEdit style={{ color: "black" }} />
+                <span>تعديل</span>
               </Link>
-              <span>تعديل</span>
             </div>
           </div>
           <span
@@ -77,7 +84,8 @@ export const UserProfileCard = () => {
                 <h3>تعديل الصفحه الشخصيه</h3>
               </div>
               <div className="user-modal">
-                <input value={name} onChange={changName} type="text" />
+                <input value={name} onChange={changName} type="text" />{" "}
+                {showPass ? <FaEye /> : <FaEyeSlash />}
                 <input type="number" value={phone} onChange={changePhone} />
                 <input type="email" value={email} onChange={changeEmail} />
               </div>

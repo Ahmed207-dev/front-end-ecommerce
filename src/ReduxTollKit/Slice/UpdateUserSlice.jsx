@@ -43,8 +43,7 @@ export const UpdateUserDataSlice = createSlice({
       state.status = action.payload;
     });
     bulider.addCase(restPassword.rejected, (state, action) => {
-      state.loading = true;
-      state.status = null;
+      state.record = action.payload;
     });
   },
 });

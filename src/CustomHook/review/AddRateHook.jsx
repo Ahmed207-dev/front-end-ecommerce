@@ -9,7 +9,7 @@ import AllReviewhook from "./AllReviewhook";
 const AddRateHook = () => {
   const dispatch = useDispatch();
 
-  const [rate, setRate] = useState(0);
+  const [rate, setRate] = useState(1);
   const [comment, setComment] = useState("");
   const [loading, setLoading] = useState(true);
 

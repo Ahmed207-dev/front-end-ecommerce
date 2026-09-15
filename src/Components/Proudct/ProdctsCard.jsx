@@ -71,7 +71,7 @@ export const ProdctsCard = ({ items, favProd }) => {
             )}
 
             <div className="d-flex align-items-center gap-1 text-warning fw-bold fs-6">
-              <span>{items?.rate}</span>
+              <span>{items?.ratingsAverage}</span>
               <FaStar size={16} />
             </div>
           </div>

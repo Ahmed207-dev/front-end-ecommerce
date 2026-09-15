@@ -7,7 +7,7 @@ export const UserAllAdress = () => {
 
   return (
     <>
-      <div className="admin-content-text pb-2">العناوين</div>
+      <div className="admin-content-text p-2">العناوين</div>
       <div className="justify-content-center">
         {data?.map((item, index) => (
           <UserAllAdressCard key={index} item={item} />

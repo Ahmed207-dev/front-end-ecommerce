@@ -3,7 +3,6 @@ import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import DeleteReviewHook from "../../CustomHook/review/DeleteReviewHook";
-import EditReviewHook from "../../CustomHook/review/EditReviewHook";
 
 export const Rateitem = ({ item }) => {
   const [show, handleDelete] = DeleteReviewHook(item);

@@ -70,7 +70,11 @@ export const RegisterPage = () => {
             placeholder="  رقم الهاتف..."
           />
         </div>
-        <button onClick={onSubmit} type="submit" className="btn btn-primary">
+        <button
+          onClick={onSubmit}
+          type="submit"
+          className="btn btn-dark text-white p-2 product-cart-add"
+        >
           تسجيل الحساب
         </button>
         <p>

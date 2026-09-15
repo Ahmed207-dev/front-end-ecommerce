@@ -114,6 +114,7 @@ export const Proudctslice = createSlice({
     status: null,
     record: [],
     brand: [],
+    brandPagination: [],
   },
   name: "CategoerySlice",
   reducers: {},
@@ -183,7 +184,7 @@ export const Proudctslice = createSlice({
     //ByBrand
     bulider.addCase(FetchProudctByBrand.fulfilled, (state, action) => {
       state.brand = action.payload.data;
-      state.Pagination = action.payload;
+      state.brandPagination = action.payload;
     });
     bulider.addCase(FetchProudctByBrand.rejected, (state, action) => {
       state.Pagination = action.payload;

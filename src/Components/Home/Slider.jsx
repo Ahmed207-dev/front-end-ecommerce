@@ -25,12 +25,6 @@ export const Slider = () => {
             data-bs-slide-to="1"
             aria-label="Slide 2"
           ></button>
-          <button
-            type="button"
-            data-bs-target="#mainSlider"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
         </div>
 
         <div className="carousel-inner">

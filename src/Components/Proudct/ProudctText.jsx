@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
 import ProudctDetailesHook from "../../CustomHook/proudct/ProudctDetailesHook";
 import AddToCartHook from "../../CustomHook/cart/AddToCartHook";
 import { ToastContainer } from "react-toastify";
@@ -8,6 +9,7 @@ export const ProudctText = () => {
   const { id } = useParams();
   const [oneitem, images, oneCat, oneBrand] = ProudctDetailesHook(id);
   const [saveColor, colorIndex, addCart, isPress] = AddToCartHook(id, oneitem);
+
   return (
     <div className="d-flex flex-column text-end">
       <div className="cat-text text-secondary mb-1"> {oneCat?.name}:</div>
@@ -24,7 +26,12 @@ export const ProudctText = () => {
         <div className="cat-title fs-5 fw-bold text-dark mb-2"></div>
         <span className="fw-bold text-dark me-2">{oneBrand?.name}</span>
       </div>
+      <div className="d-flex align-items-center gap-1 text-warning fw-bold fs-6">
+        <span className="cat-text text-secondary ">التقييم :</span>
+        <span>{oneitem?.ratingsAverage}</span>
 
+        <FaStar size={16} />
+      </div>
       <div className="d-flex align-items-center my-2">
         {oneitem?.availableColors?.map((color, index) => (
           <div
@@ -88,10 +95,10 @@ export const ProudctText = () => {
           }}
           onClick={addCart}
           disabled={isPress === true}
-          className="product-cart-btn btn btn-dark px-4 py-2 text-white"
+          className="product-cart-add btn btn-dark px-4 py-2 text-white"
         >
-          اضف للعربة
-          {isPress === true ? <LoadingPage /> : null}
+          {isPress ? null : <span> اضف للعربة</span>}
+          {isPress === true ? <LoadingPage className="laoding-page" /> : null}
         </button>
       </div>
       <ToastContainer />
