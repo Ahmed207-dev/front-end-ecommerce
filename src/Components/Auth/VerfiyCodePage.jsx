@@ -17,7 +17,11 @@ export const VerfiyCodePage = () => {
             placeholder=" ادخل الكود..."
           />
         </div>
-        <button onClick={onSumbit} type="submit" className="btn btn-primary">
+        <button
+          onClick={onSumbit}
+          type="submit"
+          className="btn btn-dark text-white p-2 product-cart-add"
+        >
           تاكيد الكود
         </button>
         <p>

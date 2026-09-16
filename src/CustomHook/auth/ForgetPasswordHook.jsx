@@ -10,6 +10,7 @@ const ForgetPasswordHook = () => {
 
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(true);
+  const [isPress, setIsPress] = useState(false);
 
   const changeEmail = (e) => {
     setEmail(e.target.value);
@@ -22,6 +23,7 @@ const ForgetPasswordHook = () => {
     }
     localStorage.setItem("emailUser", email);
     setLoading(true);
+    setIsPress(true);
     await dispatch(forgetPassword({ email }));
     setLoading(false);
   };
@@ -36,9 +38,10 @@ const ForgetPasswordHook = () => {
       } else if (CodeForgetPass.records.status === "fail") {
         toast.error("لا يوجد حساب مسجل ");
       }
+      setIsPress(false);
     }
-  }, [loading]);
-  return [email, changeEmail, onSubmit, loading];
+  }, [loading, CodeForgetPass, isPress]);
+  return [email, changeEmail, onSubmit, loading, isPress];
 };
 
 export default ForgetPasswordHook;

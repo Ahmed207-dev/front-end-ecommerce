@@ -20,19 +20,24 @@ export const UserAllAdressCard = ({ item }) => {
           }}
         >
           <p>{item?.alias}</p>
-          <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+          <div style={{ display: "flex", gap: "10px" }}>
             <div
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", display: "flex", gap: "4px" }}
               onClick={() => {
                 onClickDelete(item._id);
               }}
             >
-              <MdOutlineDelete /> <span>حذف</span>
+              <MdOutlineDelete size={22} />
+              <span>حذف</span>
             </div>
-            <Link to={`/user/edit-adress/${item?._id}`}>
-              <FaEdit style={{ color: "black" }} />
+            <Link
+              className="d-flex gap-2"
+              to={`/user/edit-adress/${item?._id}`}
+              style={{ color: "gray", textDecoration: "none" }}
+            >
+              <FaEdit />
+              <span>تعديل</span>
             </Link>
-            <span>تعديل</span>
           </div>
         </div>
         <div> {item?.details}</div>

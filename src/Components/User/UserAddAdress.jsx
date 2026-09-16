@@ -10,6 +10,7 @@ export const UserAddAdress = () => {
     changefullAddress,
     changePhone,
     onSubmit,
+    isPress,
   ] = UserAddAdressHook();
   return (
     <>
@@ -46,7 +47,11 @@ export const UserAddAdress = () => {
             placeholder="رقم الهاتف"
           />
           <div className="d-flex justify-content-end">
-            <button onClick={onSubmit} className="btn btn-dark  ">
+            <button
+              disabled={isPress}
+              onClick={onSubmit}
+              className="btn btn-dark  "
+            >
               اضافه العنوان
             </button>
           </div>

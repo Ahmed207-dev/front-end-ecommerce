@@ -1,29 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const AdminSideBar = () => {
   return (
     <div className="admin-sidebar shadow-sm rounded-4 bg-white p-2 mb-3">
-      <Link to="/admin/allproudct" className="admin-link active">
+      <NavLink to="/admin/allproudct" className="admin-link" end>
         إدارة المنتجات
-      </Link>
-      <Link to="/admin/allorders" className="admin-link">
+      </NavLink>
+      <NavLink to="/admin/allorders" className="admin-link">
         إدارة الطلبات
-      </Link>
-      <Link to="/admin/addbrand" className="admin-link">
+      </NavLink>
+      <NavLink to="/admin/addbrand" className="admin-link">
         أضف ماركة
-      </Link>
-      <Link to="/admin/category" className="admin-link">
+      </NavLink>
+      <NavLink to="/admin/category" className="admin-link">
         أضف تصنيف
-      </Link>
-      <Link to="/admin/subcategory" className="admin-link">
+      </NavLink>
+      <NavLink to="/admin/subcategory" className="admin-link">
         أضف تصنيف فرعي
-      </Link>
-      <Link to="/admin/addproudcts" className="admin-link">
+      </NavLink>
+      <NavLink to="/admin/addproudcts" className="admin-link">
         أضف منتج
-      </Link>
-      <Link to="/admin/addcopoun" className="admin-link">
+      </NavLink>
+      <NavLink to="/admin/addcopoun" className="admin-link">
         أضف كوبون
-      </Link>
+      </NavLink>
     </div>
   );
 };

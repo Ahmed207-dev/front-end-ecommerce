@@ -194,7 +194,7 @@ export const AdminAddproudcts = () => {
               <CompactPicker onChangeComplete={handleChangeComplete} />
             )}
           </div>
-          <div className="d-flex justify-content-end">
+          <div className="d-flex justify-content-end pb-3">
             <button
               style={{
                 display: "flex",
@@ -204,9 +204,9 @@ export const AdminAddproudcts = () => {
               }}
               disabled={isPress === true}
               onClick={handleSubmit}
-              className="btn btn-dark  "
+              className="btn btn-dark"
             >
-              اضافه التعديلات
+              اضافه منتج
               {isPress === true ? <LoadingPage /> : null}
             </button>
           </div>

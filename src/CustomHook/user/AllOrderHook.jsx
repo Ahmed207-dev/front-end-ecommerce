@@ -16,12 +16,12 @@ const AllOrderHook = (id) => {
   //
   const dispatch = useDispatch();
   const data = useSelector((state) => state.order);
-  // allOrder
+
   let limit = 2;
   useEffect(() => {
     const get = async () => {
       setLoading(true);
-      dispatch(getAllOrder({ page: 1, limit: limit }));
+      await dispatch(getAllOrder({ page: 1, limit: limit }));
       setLoading(false);
     };
     get();
@@ -41,7 +41,7 @@ const AllOrderHook = (id) => {
       }
     }
   }, [loading, data]);
-  //   specif order
+
   useEffect(() => {
     const get = async () => {
       setLoading(true);
@@ -58,7 +58,7 @@ const AllOrderHook = (id) => {
 
   //
 
-  return [result, allData, pagination, onpress, specifData];
+  return [result, allData, pagination, onpress, specifData, loading];
 };
 
 export default AllOrderHook;

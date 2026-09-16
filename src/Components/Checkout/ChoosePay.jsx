@@ -53,13 +53,14 @@ export const ChoosePay = () => {
   return (
     <>
       <div className="pay-page-container d-flex justify-content-between align-items-start gap-4 py-4 user-response">
-        <div className="py-2 my-2">
+        <div className="">
           <div className="pay-main-content flex-grow-1">
             <h2 style={{ fontWeight: "bold" }}> اختر طريقه الدفع</h2>
 
             <div className="container-inp-pay">
-              <div
-                className={` box-choose-pay d-flex  align-items-center gap-2 inp-pay ${show === "card" ? "inp-pay-active" : ""} `}
+              <label
+                className={` box-choose-pay d-flex  align-items-center gap-2 inp-pay justify-content-between ${show === "card" ? "inp-pay-active" : ""} `}
+                style={{ width: "330px", cursor: "pointer" }}
               >
                 <h3> الدفع عن طريق بطاقه</h3>
                 <img src={visa} alt="" style={{ width: "80px" }} />
@@ -70,11 +71,12 @@ export const ChoosePay = () => {
                   onChange={handleClick}
                   value="card"
                 />
-              </div>
-              <div
-                className={` box-choose-pay d-flex  align-items-center gap-2 inp-pay ${show === "cash" ? "inp-pay-active" : ""} `}
+              </label>
+              <label
+                className={` box-choose-pay d-flex  align-items-center gap-2 inp-pay   justify-content-between ${show === "cash" ? "inp-pay-active" : ""} `}
+                style={{ width: "330px", cursor: "pointer" }}
               >
-                <h3> الدفع عن طريق بطاقه</h3>
+                <h3> الدفع عند الاستلام</h3>
                 <img src={cash} alt="" style={{ width: "80px" }} />
                 <input
                   type="radio"
@@ -83,7 +85,7 @@ export const ChoosePay = () => {
                   onChange={handleClick}
                   value="cash"
                 />
-              </div>
+              </label>
 
               <h2 style={{ fontWeight: "bold" }}>عنوان التوصيل</h2>
 
@@ -104,7 +106,7 @@ export const ChoosePay = () => {
                 </select>
                 <button
                   onClick={() => setShowPop(true)}
-                  className="btn btn-warning "
+                  className="btn btn-dark text-white p-2"
                   style={{ width: "200px" }}
                 >
                   + اضافه عنوان جديد
@@ -146,7 +148,7 @@ export const ChoosePay = () => {
             </div>
           </div>
         </div>
-        {/*  */}
+
         <div className="order-summary-card">
           <h3 className="summary-title">ملخص الطلب</h3>
 
@@ -160,8 +162,8 @@ export const ChoosePay = () => {
           <div className="summary-row">
             <span className="summary-label">الخصم</span>
             <span className="summary-value">
-              {cartItems?.totalPriceAfterDiscount
-                ? `${cartItems.totalCartPrice - cartItems.totalPriceAfterDiscount} ج.م.`
+              {Math.floor(cartItems?.totalPriceAfterDiscount)
+                ? `${Math.floor(cartItems.totalCartPrice - cartItems.totalPriceAfterDiscount)} ج.م.`
                 : "0 ج.م."}
             </span>
           </div>
@@ -171,8 +173,8 @@ export const ChoosePay = () => {
           <div className="total-price-section">
             <span className="total-label">المجموع الكلي</span>
             <div className="total-amount">
-              {cartItems?.totalPriceAfterDiscount
-                ? cartItems.totalPriceAfterDiscount
+              {Math.floor(cartItems?.totalPriceAfterDiscount)
+                ? Math.floor(cartItems.totalPriceAfterDiscount)
                 : cartItems?.totalCartPrice || 0}
               ج.م.
             </div>

@@ -34,7 +34,11 @@ export const ResetPasswordPage = () => {
             placeholder="تاكيد كلمه السر..."
           />
         </div>
-        <button onClick={onSubmit} type="submit" className="btn btn-primary">
+        <button
+          onClick={onSubmit}
+          type="submit"
+          className="btn btn-dark text-white p-2 product-cart-add"
+        >
           تغيير الباسورد
         </button>
         <p>

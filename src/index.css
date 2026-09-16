@@ -866,6 +866,11 @@ body {
   color: #ffffff !important;
   transition: all 0.2s ease-in-out;
 }
+.admin-link.active {
+  background-color: #212529 !important;
+  color: #ffffff !important;
+  transition: all 0.2s ease-in-out;
+}
 .admin-card {
   padding: 10px;
 }
@@ -1180,6 +1185,10 @@ body {
   border: 1px solid #eee;
 }
 .user-link:hover {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+.user-link.active {
   background-color: #333 !important;
   color: #fff !important;
 }

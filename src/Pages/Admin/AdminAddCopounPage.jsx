@@ -4,7 +4,10 @@ import { AdminSideBar } from "../../Components/Admin/AdminSideBar";
 export const AdminAddCopounPage = () => {
   return (
     <>
-      <div className="container user-response" style={{ display: "flex" }}>
+      <div
+        className="container user-response"
+        style={{ display: "flex", minHeight: "670xp" }}
+      >
         <div style={{ flex: 1 }}>
           <AdminSideBar />
         </div>

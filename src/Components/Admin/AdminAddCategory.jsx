@@ -1,6 +1,7 @@
 import { Spinner } from "react-bootstrap";
 import AddCategoreyHook from "../../CustomHook/Catgoery/AddCategoreyHook";
 import { ToastContainer } from "react-toastify";
+import LoadingPage from "../../CustomHook/Loading/LoadingPage";
 
 export const AdminAddCategory = () => {
   const [img, changephoto, setName, name, loading, isPress, handleSubmit] =
@@ -44,13 +45,13 @@ export const AdminAddCategory = () => {
               onClick={handleSubmit}
               className="btn btn-dark btn-save"
             >
-              حفظ التعديلات
+              اضافه تصنيف
             </button>
           </div>
 
           <div className="mt-3">
             {isPress && loading ? (
-              <Spinner animation="border" role="status" variant="primary" />
+              <LoadingPage />
             ) : isPress === true && loading === false ? (
               <div>
                 <h2>تم الانتهاء</h2>

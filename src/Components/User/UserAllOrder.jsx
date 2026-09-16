@@ -8,7 +8,7 @@ export const UserAllOrder = () => {
   return (
     <>
       <div>
-        <div className="admin-content-text p-3">عدد الطلبات #{result}</div>
+        <div className="admin-content-text py-2">عدد الطلبات #{result}</div>
         <div className="justify-content-center">
           {allData?.length > 0 ? (
             allData?.map((items, index) => (

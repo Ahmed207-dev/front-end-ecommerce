@@ -10,7 +10,7 @@ export const CartContainer = () => {
 
   //
   return (
-    <div className="container container-cart">
+    <div className="container container-cart py-2">
       <div style={{ display: "flex", flexDirection: "column", flex: 2 }}>
         {loading ? (
           <LoadingPage />

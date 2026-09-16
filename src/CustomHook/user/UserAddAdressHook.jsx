@@ -3,14 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { AddAddress } from "../../ReduxTollKit/Slice/AddressSlice";
 import { useNavigate } from "react-router-dom";
+
 const UserAddAdressHook = () => {
   const dispatch = useDispatch();
-  const navigte = useNavigate();
-
+  const navigate = useNavigate();
   const [address, setAddress] = useState("");
   const [fullAddress, setFullAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(true);
+  const [isPress, setIsPress] = useState(false);
 
   const changAddress = (e) => {
     setAddress(e.target.value);
@@ -32,6 +33,7 @@ const UserAddAdressHook = () => {
       return;
     }
     setLoading(true);
+    setIsPress(true);
     await dispatch(
       AddAddress({
         alias: address,
@@ -42,16 +44,22 @@ const UserAddAdressHook = () => {
     setLoading(false);
   };
   useEffect(() => {
-    if (loading === false) {
+    if (loading === false && isPress === true) {
       if (records) {
         if (records?.status === "success") {
           toast.success("تمت الاضافه بنجاح");
+          if (window.location.pathname === "/user/add-adress") {
+            setTimeout(() => {
+              navigate("/user/adress");
+            }, 1000);
+          }
         } else {
           toast.error("حدث خطا");
         }
       }
+      setIsPress(false);
     }
-  }, [loading]);
+  }, [loading, isPress, records]);
 
   return [
     address,
@@ -61,6 +69,7 @@ const UserAddAdressHook = () => {
     changefullAddress,
     changePhone,
     onSubmit,
+    isPress,
   ];
 };
 

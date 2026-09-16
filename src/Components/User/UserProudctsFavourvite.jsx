@@ -16,7 +16,7 @@ export const UserProudctsFavourvite = () => {
   return (
     <>
       <div>
-        <div className="order-title p-2">قائمه المفضله</div>
+        <div className="admin-content-text p-2">قائمه المفضله</div>
         <div className="d-flex justify-content-start flex-wrap gap-4">
           <ProudctsCopmonent proudcts={items} />
         </div>

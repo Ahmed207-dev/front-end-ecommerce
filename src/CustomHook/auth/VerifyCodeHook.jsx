@@ -25,9 +25,9 @@ const VerifyCodeHook = () => {
   };
   useEffect(() => {
     if (loading === false) {
-      if (codes.records.status === "error || fail") {
-        toast.error("حدث خطا");
-      } else if (codes.records.status === "Success") {
+      if (codes?.records?.status === "fail") {
+        toast.error("الكود غير صحيح");
+      } else if (codes?.records?.status === "Success") {
         toast.success("الكود صحيح");
         setTimeout(() => {
           navigate("/user/restPassword");

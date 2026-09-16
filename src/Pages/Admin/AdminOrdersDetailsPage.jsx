@@ -5,7 +5,10 @@ import { AdminOrdersDetails } from "../../Components/Admin/AdminOrdersDetails";
 export const AdminOrdersDetailsPage = () => {
   return (
     <>
-      <div className="container d-flex py-2 flex-wrap">
+      <div
+        className="container d-flex py-2 flex-wrap"
+        style={{ minHeight: "670px" }}
+      >
         <div style={{ display: "flex", flex: 1 }}>
           <AdminSideBar />
         </div>

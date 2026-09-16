@@ -1,23 +1,23 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const UserSideBar = () => {
   return (
     <div className="user-sidebar shadow-sm rounded-4 text-center p-2 bg-white">
-      <Link to="/user/allorder" className="user-link">
+      <NavLink to="/user/allorder" className="user-link">
         إدارة الطلبات
-      </Link>
+      </NavLink>
 
-      <Link to="/user/favoriteproudct" className="user-link">
+      <NavLink to="/user/favoriteproudct" className="user-link">
         قائمة المفضلة
-      </Link>
+      </NavLink>
 
-      <Link to="/user/adress" className="user-link">
+      <NavLink to="/user/adress" className="user-link">
         العنوان الشخصي
-      </Link>
+      </NavLink>
 
-      <Link to="/user/profile" className="user-link">
+      <NavLink to="/user/profile" className="user-link">
         الملف الشخصي
-      </Link>
+      </NavLink>
     </div>
   );
 };

@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import ForgetPasswordHook from "../../CustomHook/auth/ForgetPasswordHook";
+import LoadingPage from "../../CustomHook/Loading/LoadingPage";
 
 export const ForgetPasswordPage = () => {
-  const [email, changeEmail, onSubmit] = ForgetPasswordHook();
+  const [email, changeEmail, onSubmit, loading, isPress] = ForgetPasswordHook();
   return (
     <div className="container" style={{ minHeight: "670px" }}>
       <form className="form-login" onSubmit={(e) => e.preventDefault()}>
@@ -19,8 +20,21 @@ export const ForgetPasswordPage = () => {
             placeholder=" ادخل الايميل..."
           />
         </div>
-        <button onClick={onSubmit} type="submit" className="btn btn-primary">
-          ارسال الكود
+        <button
+          disabled={isPress}
+          onClick={onSubmit}
+          type="submit"
+          className="btn btn-dark text-white p-2 product-cart-add"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "5px",
+            height: "45px",
+          }}
+        >
+          {isPress === true ? null : <span> ارسال الكود</span>}
+          {isPress === true ? <LoadingPage className="laoding-page" /> : null}
         </button>
         <p>
           ليس لديك حساب ؟<Link to="/register"> اضغط هنا</Link>

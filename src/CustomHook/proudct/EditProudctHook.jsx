@@ -36,11 +36,12 @@ const EditProudctHook = (id) => {
     setFiles((prev) => prev.filter((_, index) => index !== indexRemove));
   };
   // states
+
   const [prodName, setProdName] = useState("");
   const [prodDes, setProdDes] = useState("");
-  const [prodDiscount, setProdDiscount] = useState(0);
-  const [prodPrice, setProdPrice] = useState(0);
-  const [Qty, setQty] = useState(0);
+  const [prodDiscount, setProdDiscount] = useState("");
+  const [prodPrice, setProdPrice] = useState("");
+  const [Qty, setQty] = useState("");
   const [CatId, setCatId] = useState("");
   const [BrandID, setBrandID] = useState("");
   const [SubCatId, setSubCatId] = useState([]);
@@ -74,6 +75,7 @@ const EditProudctHook = (id) => {
       setQty(record?.quantity);
       setBrandID(record?.brand);
       setCatId(record?.category);
+      setProdPrice(record?.priceAfterDiscount);
       setColors(record?.availableColors);
       if (record?.images?.length > 0) {
         setFiles(record?.images);
@@ -145,6 +147,7 @@ const EditProudctHook = (id) => {
     formData.append("title", prodName);
     formData.append("description", prodDes);
     formData.append("price", prodDiscount);
+    formData.append("priceAfterDiscount", prodPrice);
     formData.append("category", CatId);
     formData.append("quantity", Qty);
     formData.append("brand", BrandID);
@@ -189,6 +192,7 @@ const EditProudctHook = (id) => {
       }
     }
   }, [loading]);
+
   return [
     removeFile,
     BrandID,

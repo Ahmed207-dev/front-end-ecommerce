@@ -28,7 +28,7 @@ export const UserProfileCard = () => {
               alignItems: "center",
             }}
           >
-            <span style={{ display: "flex", gap: "5px", fontSize: "20px" }}>
+            <span style={{ display: "flex", gap: "8px", fontSize: "20px" }}>
               الاسم:
               <span style={{ color: "gray" }}> {user?.name}</span>
             </span>
@@ -39,7 +39,7 @@ export const UserProfileCard = () => {
             >
               <Link
                 to=""
-                style={{ color: "black", textDecoration: "none" }}
+                style={{ color: "gray", textDecoration: "none" }}
                 className="d-flex gap-2"
               >
                 <FaEdit />
@@ -50,7 +50,7 @@ export const UserProfileCard = () => {
           <span
             style={{
               display: "flex",
-              gap: "5px",
+              gap: "8px",
               fontSize: "20px",
               alignItems: "center",
             }}
@@ -63,7 +63,7 @@ export const UserProfileCard = () => {
           <span
             style={{
               display: "flex",
-              gap: "5px",
+              gap: "8px",
               fontSize: "20px",
               alignItems: "center",
             }}

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { DeleteProudct } from "../../ReduxTollKit/Slice/ProudctSlice";
+import { MdOutlineEdit } from "react-icons/md";
+import { RiDeleteBinLine } from "react-icons/ri";
 
 export const AdminProudctsCard = ({ item }) => {
   const dispatch = useDispatch();
@@ -22,9 +24,24 @@ export const AdminProudctsCard = ({ item }) => {
                 cursor: "pointer",
                 textDecoration: "none",
                 color: "black",
+                display: "flex",
+                gap: "4px",
               }}
             >
-              ازاله
+              <span>
+                <RiDeleteBinLine
+                  style={{
+                    backgroundColor: "#ff0d0d48",
+                    borderRadius: "50%",
+                    padding: "3px",
+                    color: "#ff0d0da2",
+                  }}
+                  size={22}
+                />
+              </span>
+              <span className="fw-bold" style={{ color: "#ff0d0da2" }}>
+                ازاله
+              </span>
             </a>
 
             <Link
@@ -33,9 +50,24 @@ export const AdminProudctsCard = ({ item }) => {
                 cursor: "pointer",
                 textDecoration: "none",
                 color: "black",
+                display: "flex",
+                gap: "4px",
               }}
             >
-              تعديل
+              <span>
+                <MdOutlineEdit
+                  style={{
+                    backgroundColor: "#0d62ff61",
+                    borderRadius: "50%",
+                    padding: "3px",
+                    color: "#0d62ff",
+                  }}
+                  size={22}
+                />
+              </span>
+              <span className="fw-bold" style={{ color: "#0d62ff" }}>
+                تعديل
+              </span>
             </Link>
           </div>
           <div
@@ -49,13 +81,16 @@ export const AdminProudctsCard = ({ item }) => {
               <img src={item?.imageCover} className="card-img-top" alt="..." />
             </Link>
           </div>
+          <div
+            className="bg-success text-white px-2 py-1 rounded-pill small fw-semibold d-inline-block"
+            style={{ width: "fit-content" }}
+          >
+            الكمية : {item?.ratingsQuantity || 0}
+          </div>
           <div className="card-body">
             <p className="card-text"> {item?.title}</p>
           </div>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <span className="text-warning ms-1">
-              {item?.ratingsQuantity || 0}
-            </span>
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
             <span>
               {item?.priceAfterDiscount ? (
                 <div
@@ -73,7 +108,7 @@ export const AdminProudctsCard = ({ item }) => {
                   >
                     {item?.price}جنيه
                   </span>
-                  <span>{item?.priceAfterDiscount} جنيه</span>
+                  <span className="fs-5">{item?.priceAfterDiscount} جنيه</span>
                 </div>
               ) : (
                 <div className="fw-bold fs-5 text-dark">

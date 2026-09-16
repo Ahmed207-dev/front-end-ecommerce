@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import MultiselectPackge from "multiselect-react-dropdown";
 import EditProudctHook from "../../CustomHook/proudct/EditProudctHook";
 import { useParams } from "react-router-dom";
+
 export const AdminEditproudcts = () => {
   const { id } = useParams();
   const Multiselect = MultiselectPackge.default;
@@ -43,10 +44,11 @@ export const AdminEditproudcts = () => {
 
   return (
     <>
-      <div>
+      <div className="">
         <div className="admin-content-text py-2 mb-3">
           تعديل منتج - {prodName}
         </div>
+
         <div
           {...getRootProps()}
           style={{
@@ -110,7 +112,8 @@ export const AdminEditproudcts = () => {
             </div>
           ))}
         </div>
-        <form className="form-admin w-100" action="">
+
+        <form className="form-admin " action="">
           <input
             type="text"
             placeholder="اسم المنتج"
@@ -173,6 +176,7 @@ export const AdminEditproudcts = () => {
               </option>
             ))}
           </select>
+
           <label htmlFor="">الالوان المتاحه</label>
           <div style={{ display: "flex", gap: "10px" }}>
             {colors?.map((col, i) => (
@@ -196,18 +200,21 @@ export const AdminEditproudcts = () => {
               style={{
                 width: "30px",
                 height: "30px",
+                cursor: "pointer",
               }}
             />
             {showColor && (
               <CompactPicker onChangeComplete={handleChangeComplete} />
             )}
           </div>
-          <div className="d-flex justify-content-end">
-            <button onClick={handleSubmit} className="btn btn-dark  ">
+
+          <div className="d-flex justify-content-end pb-3 mt-3">
+            <button onClick={handleSubmit} className="btn btn-dark">
               حفظ التعديلات
             </button>
           </div>
         </form>
+
         <ToastContainer />
       </div>
     </>

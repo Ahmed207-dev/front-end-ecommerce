@@ -31,7 +31,7 @@ export const AdminCouponCard = () => {
               }}
             >
               <div
-                style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer", display: "flex", gap: "3px" }}
                 onClick={() => {
                   onclickDelete(item._id);
                 }}
@@ -39,12 +39,19 @@ export const AdminCouponCard = () => {
                 <MdOutlineDelete />
                 <span>حذف</span>
               </div>
-              <div style={{ cursor: "pointer" }}>
-                <Link to={`/admin/editcoupon/${item?._id}`}>
-                  <FaEdit style={{ color: "black" }} />
-                </Link>
+
+              <Link
+                to={`/admin/editcoupon/${item?._id}`}
+                style={{
+                  textDecoration: "none",
+                  color: "gray",
+                  display: "flex",
+                  gap: "5px",
+                }}
+              >
+                <FaEdit />
                 <span>تعديل</span>
-              </div>
+              </Link>
             </div>
           </div>
           <div>تاريخ الانتهاء :{item?.expire?.slice(0, 10)} </div>

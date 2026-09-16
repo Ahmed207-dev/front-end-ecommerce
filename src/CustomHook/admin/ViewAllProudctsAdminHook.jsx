@@ -11,7 +11,7 @@ const ViewAllProudctsAdminHook = () => {
   useEffect(() => {
     const get = async () => {
       setLoading(true);
-      await dispatch(FetchProudct({ limit: 4, page: "" }));
+      await dispatch(FetchProudct({ limit: 3, page: "" }));
       setLoading(false);
     };
     get();
@@ -21,7 +21,7 @@ const ViewAllProudctsAdminHook = () => {
   const pageCount = Pagination?.paginationResult?.numberOfPages || 0;
 
   const getpage = async (page) => {
-    await dispatch(FetchProudct({ limit: 4, page: page }));
+    await dispatch(FetchProudct({ limit: 3, page: page }));
   };
 
   return [proudcts, status, Pagination, pageCount, getpage, loading];

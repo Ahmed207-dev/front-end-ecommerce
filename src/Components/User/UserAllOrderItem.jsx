@@ -23,7 +23,7 @@ export const UserAllOrderItem = ({ items, num }) => {
             <p style={{ display: "flex", gap: "5px", alignItems: "center" }}>
               الحاله التوصيل:
               <span className="stat" style={{ color: "gray" }}>
-                {items?.isDelivered === false ? "قيد انتظار" : "تم التوصيلf"}
+                {items?.isDelivered === false ? "قيد انتظار" : "تم التوصيل"}
               </span>
             </p>
             <p style={{ display: "flex", gap: "5px", alignItems: "center" }}>
