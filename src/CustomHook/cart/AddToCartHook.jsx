@@ -23,6 +23,11 @@ const AddToCartHook = (id, oneitem) => {
   const addCart = async () => {
     const token = localStorage.getItem("token");
     if (oneitem?.availableColors.length >= 1) {
+      if (!token || token === "undefined") {
+        toast.error("انت غير مسجل دخول، يرجى تسجيل الدخول أولاً");
+        return;
+      }
+
       if (colorText === "") {
         toast.warn("من فضلك اختار لون ");
         return;
@@ -31,10 +36,6 @@ const AddToCartHook = (id, oneitem) => {
       setColorText("");
     }
 
-    if (!token || token === "undefined") {
-      toast.error("انت غير مسجل دخول، يرجى تسجيل الدخول أولاً");
-      return;
-    }
     setLoading(true);
     setIsPress(true);
     await dispatch(

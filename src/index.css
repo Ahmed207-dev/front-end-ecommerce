@@ -245,7 +245,7 @@ body {
 
 /* products details page */
 .product-gallary-card {
-  height: 470px !important;
+  height: 400px !important;
   width: 370px;
   border-radius: 29px;
   background-color: #ffffff;
