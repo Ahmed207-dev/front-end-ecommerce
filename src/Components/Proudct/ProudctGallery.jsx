@@ -14,7 +14,12 @@ export const ProudctGallery = () => {
       <div className="carousel-inner">
         {images?.map((src, i) => (
           <div key={i} className={`carousel-item ${i === 0 ? "active" : ""}`}>
-            <img src={src?.org} className="d-block w-100" alt="product" />
+            <img
+              src={src?.org}
+              className="d-block "
+              style={{ width: "300px", margin: "10px auto" }}
+              alt="product"
+            />
           </div>
         ))}
       </div>
