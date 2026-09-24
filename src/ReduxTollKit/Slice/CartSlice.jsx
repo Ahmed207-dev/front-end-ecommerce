@@ -85,7 +85,11 @@ export const cartSlice = createSlice({
     loading: true,
   },
   name: "cartSlice",
-  reducers: {},
+  reducers: {
+    stopLoading: (state) => {
+      state.loading = false;
+    },
+  },
   extraReducers: (bulider) => {
     // addToCart
     bulider.addCase(addToCart.fulfilled, (state, action) => {
@@ -156,4 +160,5 @@ export const cartSlice = createSlice({
     });
   },
 });
+export const { stopLoading } = cartSlice.actions;
 export default cartSlice.reducer;
