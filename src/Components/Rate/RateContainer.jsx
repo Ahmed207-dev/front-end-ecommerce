@@ -5,7 +5,7 @@ import PaginationPage from "../utils/PaginationPage";
 import { Rateitem } from "./Rateitem";
 import { Ratepost } from "./RatePost";
 import AllReviewhook from "../../CustomHook/review/AllReviewhook";
-
+import { ToastContainer } from "react-toastify";
 export const RateContainer = () => {
   const { id } = useParams();
   const [res, , loading] = AllReviewhook(id);
@@ -28,7 +28,7 @@ export const RateContainer = () => {
       </div>
       <Ratepost />
       {loading ? (
-        <h6>جاري التحميل...</h6> 
+        <h6>جاري التحميل...</h6>
       ) : res?.length > 0 ? (
         res.map((item, index) => <Rateitem key={index} item={item} />)
       ) : (
@@ -36,6 +36,7 @@ export const RateContainer = () => {
       )}
 
       <PaginationPage />
+      <ToastContainer />
     </div>
   );
 };

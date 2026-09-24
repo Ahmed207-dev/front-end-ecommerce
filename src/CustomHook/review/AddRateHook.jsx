@@ -27,8 +27,13 @@ const AddRateHook = () => {
   };
 
   let user = JSON.parse(localStorage.getItem("user")) || "";
+  let token = JSON.parse(localStorage.getItem("token")) || "";
 
   const onSubmit = async () => {
+    if (!token) {
+      toast.error("من فضلك سجل دخول اولا");
+      return;
+    }
     if (comment === "") {
       toast.error("من فضلك اكتب تعليق ");
       return;

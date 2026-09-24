@@ -1,6 +1,5 @@
 import { Rating } from "react-simple-star-rating";
 import AddRateHook from "../../CustomHook/review/AddRateHook";
-import { ToastContainer } from "react-toastify";
 
 export const Ratepost = () => {
   const handleRating = (rates) => {
@@ -42,7 +41,6 @@ export const Ratepost = () => {
             اضف تعليق
           </button>
         </form>
-        <ToastContainer />
       </div>
     </div>
   );
