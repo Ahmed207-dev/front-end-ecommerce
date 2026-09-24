@@ -36,19 +36,19 @@ export const SearchCount = ({ title, searchApi }) => {
           <div className="card-filter">
             <div
               onClick={() => {
-                handleclick(" الاكثر مبيعا ");
-              }}
-              className="border-bottom card-filter-item"
-            >
-              الاكثر مبيعا
-            </div>
-            <div
-              onClick={() => {
                 handleclick("الاعلي تقييما");
               }}
               className="border-bottom card-filter-item"
             >
               الاعلي تقييما
+            </div>
+            <div
+              onClick={() => {
+                handleclick("الاقل تقييما");
+              }}
+              className="border-bottom card-filter-item"
+            >
+              الاقل تقييما
             </div>
             <div
               onClick={() => {

@@ -85,8 +85,10 @@ const SearchHomePageHook = () => {
       sort = "+price";
     } else if (sortType === "السعر من الاعلي للاقل") {
       sort = "-price";
-    } else if (sortType === "") {
-      sort = "";
+    } else if (sortType === "الاعلي تقييما") {
+      sort = "-ratingsAverage";
+    } else if (sortType === "الاقل تقييما") {
+      sort = "+ratingsAverage";
     }
   };
 
