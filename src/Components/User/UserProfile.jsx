@@ -76,7 +76,8 @@ export const UserProfile = () => {
         <div>
           <UserProfileCard />
         </div>
-        <div className="admin-content-text py-2">تعديل كلمه السر </div>
+
+        <div className="admin-content-text py-2">تعديل كلمه السر</div>
         <div className="user-inp-profile">
           <div style={{ position: "relative", width: "fit-content" }}>
             <input
@@ -85,10 +86,11 @@ export const UserProfile = () => {
               type={showPass ? "text" : "password"}
               placeholder="ادخل كلمه المرور القديمه"
               style={{ paddingLeft: "40px" }}
+              className="p-2"
             />
             <span
               onClick={togglePassword}
-              className="text-secondary "
+              className="text-secondary"
               style={{
                 cursor: "pointer",
                 position: "absolute",
@@ -107,12 +109,14 @@ export const UserProfile = () => {
             onChange={changNewdPass}
             type="password"
             placeholder="ادخل كلمه المرور الجديده"
+            className="p-2"
           />
           <input
             value={confirmPassword}
             onChange={changConfimPass}
             type="password"
             placeholder="تاكيد كلمه المرور الجديده"
+            className="p-2"
           />
 
           <div className="d-flex ">

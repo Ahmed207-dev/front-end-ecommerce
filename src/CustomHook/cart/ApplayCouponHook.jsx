@@ -7,6 +7,7 @@ export const ApplayCouponHook = () => {
   const dispatch = useDispatch();
   const { status, data, loading } = useSelector((state) => state.cart);
   const [coupounName, setCoupounName] = useState("");
+
   const onChangecoupounName = (e) => {
     setCoupounName(e);
   };
@@ -16,16 +17,21 @@ export const ApplayCouponHook = () => {
       toast.warning("من فضلك اكتب اسم الكوبون");
       return;
     }
-    const res = await dispatch(
-      applayCoupon({ couponName: coupounName }),
-    ).unwrap();
-    if (res?.status === 200) {
-      toast.success("تم تفعيل الكوبون بنجاح");
-      setTimeout(async () => {
-        await dispatch(getAllCart());
-      }, 500);
-    } else {
-      toast.error("الكوبون خطا او انتهي");
+    try {
+      const res = await dispatch(
+        applayCoupon({ couponName: coupounName }),
+      ).unwrap();
+
+      if (res?.status === 200) {
+        toast.success("تم تفعيل الكوبون بنجاح");
+        setTimeout(async () => {
+          await dispatch(getAllCart());
+        }, 500);
+      }
+    } catch (error) {
+      if (error.status === "fail") {
+        toast.error(error.message);
+      }
     }
   };
 

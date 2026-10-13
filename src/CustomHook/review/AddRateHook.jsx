@@ -27,7 +27,7 @@ const AddRateHook = () => {
   };
 
   let user = JSON.parse(localStorage.getItem("user")) || "";
-  let token = JSON.parse(localStorage.getItem("token")) || "";
+  let token = localStorage.getItem("token") || "";
 
   const onSubmit = async () => {
     if (!token) {
